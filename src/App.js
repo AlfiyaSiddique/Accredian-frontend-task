@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import Card from "./Card.js";
+import { Container } from "@mui/material";
+import "./App.css";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+// import Details from "./Details.js";
 
-function App() {
+
+// eslint-disable-next-line no-unused-vars
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
+export default function BasicGrid() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <Card />
+      {/* <Details user={{username: "Alfiya", email: "fdjsk"}}/> */}
+    </Container>
   );
 }
-
-export default App;
