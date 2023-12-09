@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useEffect, useState} from "react";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Card from "./Card.js";
@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-// import Details from "./Details.js";
+import Details from "./Details.js";
 
 
 // eslint-disable-next-line no-unused-vars
@@ -19,6 +19,13 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function BasicGrid() {
+  const [user, setUser]  = useState(null)
+  useEffect(()=>{
+    const user = JSON.parse(localStorage.getItem("user"));
+    if(user){
+     setUser(user)
+    }
+  }, [setUser])
   return (
     <Container maxWidth="sm">
       <ToastContainer
@@ -33,8 +40,7 @@ export default function BasicGrid() {
         pauseOnHover
         theme="light"
       />
-      <Card />
-      {/* <Details user={{username: "Alfiya", email: "fdjsk"}}/> */}
+      {user? <Details user={user} setUser={setUser}/>:<Card user={user} setUser={setUser}/>}
     </Container>
   );
 }

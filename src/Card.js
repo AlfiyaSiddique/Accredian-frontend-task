@@ -13,13 +13,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { EmailSharp, VerifiedUserSharp, PasswordSharp, SecuritySharp, Visibility, VisibilityOff } from '@mui/icons-material';
 import validate from './validation';
 import { toast } from 'react-toastify';
+import backendInfo from './BackendInfo';
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
  
-export default function Card() {
+export default function Card({user, setUser}) {
   const [login, setLogin] = useState(true)
   const [error, setError] = useState({
     email: false, emailError: false,
@@ -65,6 +66,29 @@ export default function Card() {
       
   }
 
+  const handleSignup = (data)=>{
+    fetch(`${backendInfo.url}/signup`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json' 
+      },
+    })
+    .then((res)=>{
+      return res.json()
+    })
+    .then((data)=>{
+        if(data.success){
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setUser(data.user)
+          toast.success("Account created successfully! Please Login")
+         }
+         if(data.error){
+          toast.error(data.error)
+         }
+    })
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     let submitable = true;
@@ -76,11 +100,37 @@ export default function Card() {
     })
     if(submitable){
       const data = new FormData(event.currentTarget);
-      console.log({
-        username: data.get('username'),
+      let form = {
         email: data.get('email'),
         password: data.get('password'),
-      });
+      };
+      if(!login){
+        form.username = data.get('username');
+        console.log(form)
+        handleSignup(form);
+        return
+      }
+       fetch(`${backendInfo.url}/login`,  {
+        method: "POST",
+        body: JSON.stringify(form),
+        headers: {
+          'Content-Type': 'application/json' 
+        }}
+       )
+      .then(async (res)=>{
+        return await res.json()
+      })
+      .then((data)=>{
+         if(data.success){
+           localStorage.setItem("user", JSON.stringify(data.user));
+           setUser(data.user)
+           toast.success("Login Successfull")
+         }
+         if(data.error){
+          toast.error(data.error)
+         }
+      })
+
     }else{
       toast.error("Fill all fields with valid value")
     }
@@ -122,7 +172,7 @@ export default function Card() {
               }}
               onChange={handleChange}
             />
-              {error.username && error.usernameError && <p class="error">{error.usernameError}</p>}
+              {error.username && error.usernameError && <p className="error">{error.usernameError}</p>}
               </>
             }
           <TextField
@@ -141,7 +191,7 @@ export default function Card() {
               }}
               onChange={handleChange}
             />
-            {error.email && error.emailError && <p class="error">{error.emailError}</p>}
+            {error.email && error.emailError && <p className="error">{error.emailError}</p>}
              <TextField
               margin="normal"
               required
@@ -163,7 +213,7 @@ export default function Card() {
               }}
               onChange={handleChange}
             />
-              {error.password && error.passwordError && <p class="error">{error.passwordError}</p>}
+              {error.password && error.passwordError && <p className="error">{error.passwordError}</p>}
             {!login && <><TextField
               margin="normal"
               required
@@ -180,7 +230,7 @@ export default function Card() {
               }}
               onChange={handleChange}
             />
-              {error.cpassword && error.cpasswordError && <p class="error">{error.cpasswordError}</p>}
+              {error.cpassword && error.cpasswordError && <p className="error">{error.cpasswordError}</p>}
             </>}
             <Button
               type="submit"
