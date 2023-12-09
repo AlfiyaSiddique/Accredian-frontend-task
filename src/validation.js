@@ -1,5 +1,6 @@
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$%#^&*])(?=.*[0-9]).{8,}$/;
 
+// Validation object for all fields
 const validate = {
     username: (value) => {
         if (!value) return { username: true, usernameError: "username field cannot be empty" };

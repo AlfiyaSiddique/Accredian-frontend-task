@@ -21,16 +21,23 @@ import backendInfo from './BackendInfo';
 const defaultTheme = createTheme();
  
 export default function Card({user, setUser}) {
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(true) //State to manage Signup and login
+
+  // States for inline validation
   const [error, setError] = useState({
     email: false, emailError: false,
     password: false, passwordError: false,
     username: false, usernameError: false,
     cpassword: false, cpasswordError: false
   })
+
+  // State to store password value
  const [password, setPassword] = useState("");
+
+//  State for hide/show functionality
  const [eye, setEye] = useState(false);
 
+//  Function for inline validation functionality
   const handleChange = (e)=>{
       const {name, value} = e.target;
       if(name === "password") setPassword(value)
@@ -66,6 +73,7 @@ export default function Card({user, setUser}) {
       
   }
 
+  // Function for handling Signup
   const handleSignup = (data)=>{
     fetch(`${backendInfo.url}/signup`, {
       method: "POST",
@@ -89,6 +97,7 @@ export default function Card({user, setUser}) {
     })
   }
 
+  // Function for handling Login
   const handleSubmit = (event) => {
     event.preventDefault();
     let submitable = true;
