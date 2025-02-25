@@ -1,4 +1,4 @@
-import Landing from "./components/Landing.jsx";
+import Landing from "./pages/Landing.jsx";
 
 const App = () => {
 
