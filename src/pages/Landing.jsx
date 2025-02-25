@@ -1,13 +1,15 @@
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import ReferralSteps from "../components/RefferealSteps"
+import ReferralBenefits from "../components/ReferralBenefits"
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen">
     <Navbar/>
     <Hero/>
     <ReferralSteps/>
+    <ReferralBenefits/>
    </div>
   )
 }

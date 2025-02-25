@@ -7,7 +7,7 @@ import moneybottommid from "../assets/moneybottommid.png"
 
 function Hero() {
     return (
-      <div className="min-h-screen flex flex-col items-center bg-white">
+      <div className="min-h-screen flex flex-col items-center">
           <div className="flex justify-around w-[40vw] bg-[#1A73E81C] shadow-md mx-auto px-10 py-3 mt-15 rounded-3xl font-medium">
             <a href="#" className="text-blue-600 font-semibold">Refer</a>
             <a href="#" className="text-gray-600">Benefits</a>
