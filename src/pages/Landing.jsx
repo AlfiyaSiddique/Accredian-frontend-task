@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar"
 import Hero from "../components/Hero"
 import ReferralSteps from "../components/RefferealSteps"
 import ReferralBenefits from "../components/ReferralBenefits"
+import FAQs from "../components/FAQs"
 
 const Landing = () => {
   return (
@@ -10,6 +11,7 @@ const Landing = () => {
     <Hero/>
     <ReferralSteps/>
     <ReferralBenefits/>
+    <FAQs/>
    </div>
   )
 }
