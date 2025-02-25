@@ -1,12 +1,12 @@
-import './App.css'
+import Landing from "./components/Landing.jsx";
 
-function App() {
+const App = () => {
 
   return (
-    <div className='bg-red-500 text-3xl'>
-      Hello!
-    </div>
-  )
-}
+   <div>
+    <Landing/>
+   </div>
+  );
+};
 
-export default App
+export default App;
