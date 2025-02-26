@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TfiHeadphoneAlt } from "react-icons/tfi";
 
 const faqs = [
   {
@@ -59,7 +60,27 @@ function FAQs() {
       </div>
       </div>
 
+      <div className="w-[70vw] m-auto flex justify-center px-4">
+      <div className="w-full max-w-screen-lg bg-[url(/bg-delve.png)] bg-center bg-cover bg-no-repeat rounded-lg shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+        <div className="flex items-center gap-4 z-10">
+          <div className="bg-white p-3 rounded-lg border-4 border-[#E2E8F059] shadow-md">
+            <TfiHeadphoneAlt className="text-blue-500 w-8 h-8" />
+          </div>
+          <div>
+            <h3 className="text-white text-xl font-semibold">
+              Want to delve deeper into the program?
+            </h3>
+            <p className="text-white text-sm">
+              Share your details to receive expert insights from our program team!
+            </p>
+          </div>
+        </div>
 
+        <button className="mt-4 md:mt-0 px-5 py-2 bg-white text-blue-600 rounded-md font-medium shadow-md hover:bg-gray-100 transition z-10">
+          Get in touch →
+        </button>
+      </div>
+    </div>
    
     </div>
   );
