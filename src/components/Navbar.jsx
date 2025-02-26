@@ -19,15 +19,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-2.5 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo & Left Side */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <img className="h-8 w-auto" src={logo} alt="Accredian Logo" />
+            <button className="hidden md:block bg-[#1a73e8] hover:bg-blue-700 cursor-pointer text-white px-4 py-2 rounded-md text-sm font-medium">
+              Courses <FaChevronDown className="inline" />
+            </button>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="bg-[#1a73e8] hover:bg-blue-700 cursor-pointer text-white px-4 py-2 rounded-md text-sm font-medium">
-              Courses <FaChevronDown className="inline" />
-            </button>
             <a
               href="#"
               className="text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
