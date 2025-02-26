@@ -13,7 +13,7 @@ function ReferralSteps() {
         How Do I Refer?
       </h2>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="hidden md:block relative max-w-5xl mx-auto">
         <img src={referral} />
         <div className="absolute top-40 left-20">
           <FaUserPlus className="w-12 h-12 text-[#1A73E8] m-auto" />
@@ -37,7 +37,24 @@ function ReferralSteps() {
         </div>
       </div>
 
-      <div className="text-center mt-8">
+      <div className="flex flex-col items-center justify-center gap-6 p-6 md:hidden">
+      <div className=" w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+        <FaUserPlus className="text-blue-500 text-4xl mb-4" />
+        <p className="text-gray-700">Submit referrals easily via our website referral section.</p>
+      </div>
+
+      <div className="w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+        <BiSolidNotepad className="text-blue-500 text-4xl mb-4" />
+        <p className="text-gray-700">Earn rewards once your referrals join the Accredian program.</p>
+      </div>
+
+      <div className="w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+        <IoBagRemove className="text-blue-500 text-4xl mb-4" />
+        <p className="text-gray-700">Referrer receives a bonus 365 days after program enrollment.</p>
+      </div>
+    </div>
+
+    <div className="text-center mt-8">
         <button  onClick={()=>setOpen(!isOpen)} className="bg-[#1A73E8] text-white px-6 py-3 rounded-lg">
           Refer Now
         </button>
