@@ -38,17 +38,17 @@ function ReferralSteps() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-6 p-6 md:hidden">
-      <div className=" w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+      <div className=" w-[50vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
         <FaUserPlus className="text-blue-500 text-4xl mb-4" />
         <p className="text-gray-700">Submit referrals easily via our website referral section.</p>
       </div>
 
-      <div className="w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+      <div className="w-[50vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
         <BiSolidNotepad className="text-blue-500 text-4xl mb-4" />
         <p className="text-gray-700">Earn rewards once your referrals join the Accredian program.</p>
       </div>
 
-      <div className="w-[40vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
+      <div className="w-[50vw] m-auto flex flex-col items-center text-center bg-white p-6 rounded-2xl shadow-lg md:w-1/3">
         <IoBagRemove className="text-blue-500 text-4xl mb-4" />
         <p className="text-gray-700">Referrer receives a bonus 365 days after program enrollment.</p>
       </div>
