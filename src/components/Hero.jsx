@@ -24,7 +24,7 @@ function Hero() {
       <div className="relative bg-[#EEF5FF] shadow-lg rounded-2xl p-6 sm:p-8 mt-5 flex flex-col sm:flex-row items-center w-full max-w-[70%]">
         {/* Floating Money Images */}
         <img src={moneytopleft} className="absolute top-0 left-4 w-12 sm:w-16 md:w-20 z-10  scale-125" alt="Money" />
-        <img src={moneytopmid} className="absolute top-[-5px] left-[55%] w-14 sm:w-16   md:w-20 rotate-12 scale-125" alt="Money" />
+        <img src={moneytopmid} className="absolute top-[-5px] left-[55%] w-14 sm:w-16   md:w-20 rotate-12 scale-125 hidden md:block" alt="Money" />
         <img src={moneytopright} className="absolute right-0 top-0 w-10 sm:w-14 md:w-18 rotate-6 z-10 scale-125" alt="Money" />
         <img src={moneymidright} className="absolute right-10 top-[50%] w-10 sm:w-14  md:w-18 rotate-3 scale-125 hidden md:block" alt="Money" />
         <img src={moneybottommid} className="absolute left-[45%] bottom-15 w-10 sm:w-14  md:w-18 rotate-3 z-10 scale-125 hidden md:block" alt="Money" />
