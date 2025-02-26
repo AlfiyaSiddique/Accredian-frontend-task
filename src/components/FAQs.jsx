@@ -25,13 +25,13 @@ function FAQs() {
         Frequently Asked <span className="text-blue-600">Questions</span>
       </h2>
 
-      <div className=" w-[65vw] mx-auto flex sm:flex-row gap-2 justify-center mb-6">
+      <div className=" w-[65vw] mx-auto flex flex-col md:flex-row gap-2 justify-center mb-6">
 
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
       {tabs.map((tab) => (
           <button
             key={tab}
-            className={`m-2 cursor-pointer px-6 py-4 text-sm rounded-md transition w-[200px] ${
+            className={`m-2 cursor-pointer px-6 py-4 text-sm rounded-md transition w-[200px]  ${
               activeTab === tab
                 ? "text-[#1A73E8] font-medium  shadow-[0_5px_15px_rgba(0,0,0,0.35)]"
                 : "bg-white border-gray-400 shadow-lg border-4 hover:bg-gray-100"
