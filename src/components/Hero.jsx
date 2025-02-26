@@ -13,7 +13,7 @@ function Hero() {
   return (
     <div className="lg:min-h-screen min-h-min mb-20 flex flex-col items-center px-4">
       {/* Navbar */}
-      <div className="flex justify-around w-full sm:w-[90vw] max-w-[40vw] bg-[#1A73E81C] shadow-md mx-auto px-6 py-3 mt-5 rounded-3xl font-medium">
+      <div className="flex justify-around w-full sm:w-[90vw]  bg-[#1A73E81C] shadow-md mx-auto px-6 py-3 mt-5 rounded-3xl font-medium">
         <a href="#" className="text-blue-600 font-semibold">Refer</a>
         <a href="#" className="text-gray-600">Benefits</a>
         <a href="#" className="text-gray-600">FAQs</a>
