@@ -1,7 +1,11 @@
 import { FaChevronRight } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
+import { useContext } from "react";
+import { FormContext } from "../../hooks/context";
 
 const ReferralBenefits = () => {
+
+    const {isOpen, setOpen} = useContext(FormContext)
   return (
     <div className="p-4 md:p-10">
       <h2 className="text-center text-xl md:text-2xl font-semibold">
@@ -25,15 +29,15 @@ const ReferralBenefits = () => {
                 "Digital Transformation",
                 "Business Analytics",
               ].map((category) => (
-                <>
+                <div key={category}>
                   <li
-                    key={category}
+                    
                     className="hover:text-blue-500 cursor-pointer flex justify-between"
                   >
                     {category} <FaChevronRight />
                   </li>
                   <div className="my-2 w-[100%] bg-black h-[1px]"></div>
-                </>
+                </div>
               ))}
             </ul>
           </div>
@@ -126,7 +130,7 @@ const ReferralBenefits = () => {
         </div>
       </div>
       <div className="flex justify-center mt-6">
-        <button className="bg-blue-500 text-white font-semibold py-2 px-6 rounded">
+        <button onClick={()=>setOpen(!isOpen)} className="bg-blue-500 text-white font-semibold py-2 px-6 rounded">
           Refer Now
         </button>
       </div>

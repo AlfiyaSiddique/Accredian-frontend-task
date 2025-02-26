@@ -2,8 +2,11 @@ import referral from "../assets/referral.png";
 import { FaUserPlus } from "react-icons/fa";
 import { BiSolidNotepad } from "react-icons/bi";
 import { IoBagRemove } from "react-icons/io5";
+import { useContext } from "react";
+import { FormContext } from "../../hooks/context";
 
 function ReferralSteps() {
+  const {isOpen, setOpen} = useContext(FormContext)
   return (
     <div className="bg-blue-100 py-10 px-4">
       <h2 className="text-center text-xl font-semibold mb-8">
@@ -35,7 +38,7 @@ function ReferralSteps() {
       </div>
 
       <div className="text-center mt-8">
-        <button className="bg-[#1A73E8] text-white px-6 py-3 rounded-lg">
+        <button  onClick={()=>setOpen(!isOpen)} className="bg-[#1A73E8] text-white px-6 py-3 rounded-lg">
           Refer Now
         </button>
       </div>

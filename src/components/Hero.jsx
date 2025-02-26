@@ -4,8 +4,12 @@ import moneytopmid from "../assets/moneytopmid.png"
 import moneytopright from "../assets/moneytopright.png"
 import moneymidright from "../assets/moneymidright.png"
 import moneybottommid from "../assets/moneybottommid.png"
+import { useContext } from "react"
+import { FormContext } from "../../hooks/context"
 
 function Hero() {
+  const {isOpen, setOpen} = useContext(FormContext)
+
     return (
       <div className="min-h-screen flex flex-col items-center">
           <div className="flex justify-around w-[40vw] bg-[#1A73E81C] shadow-md mx-auto px-10 py-3 mt-15 rounded-3xl font-medium">
@@ -28,7 +32,7 @@ function Hero() {
           <div className="flex-1 space-y-4">
             <h1 className="text-6xl">Let’s Learn & Earn</h1>
             <p className="text-gray-600 text-4xl pr-3.5 font-medium my-8">Get a chance to win up to <span className="text-blue-600 font-semibold">Rs. 15,000</span></p>
-            <button className="bg-blue-600 text-white px-6 py-2 font-semibold rounded">Refer Now</button>
+            <button className=" cursor-pointer bg-blue-600 text-white px-6 py-2 font-semibold rounded" onClick={()=>setOpen(!isOpen)}>Refer Now</button>
           </div>
           
           {/* Right Image Section */}
